@@ -7,6 +7,7 @@ const app =express();
 app.use(json())
 
 app.use(cors())
+const port =5000
 
 app.get('/' ,(req,res)=>{
     try {
@@ -32,7 +33,7 @@ app.get('/' ,(req,res)=>{
 })
 
 
-app.listen(5000,()=>{
-    console.log("server is running at port 5000");
+app.listen(process.env.PORT || port,()=>{
+    console.log("server is  running at port 5000");
     
 })

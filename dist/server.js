@@ -27,6 +27,7 @@ const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 app.use((0, express_1.json)());
 app.use((0, cors_1.default)());
+const port = 5000;
 app.get('/', (req, res) => {
     try {
         const bio = 'Backend developer';
@@ -43,6 +44,6 @@ app.get('/', (req, res) => {
         console.log(error);
     }
 });
-app.listen(5000, () => {
-    console.log("server is running at port 5000");
+app.listen(process.env.PORT || port, () => {
+    console.log("server is  running at port 5000");
 });
